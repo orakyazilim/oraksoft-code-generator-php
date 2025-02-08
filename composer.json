@@ -1,0 +1,9 @@
+{
+  "name": "oraksoft/orakcodegen",
+  "description": "Orak Yazılım Code Generator",
+  "require": {
+    "twbs/bootstrap": "^5.3",
+    "phpoffice/phpspreadsheet": "^4.0",
+    "engtuncay/phputils8": "^0.0.4"
+  }
+}
