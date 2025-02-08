@@ -1,6 +1,7 @@
 <?php
 require 'vendor/autoload.php';
 
+use Engtuncay\Phputils8\meta\FiColList;
 use PhpOffice\PhpSpreadsheet\IOFactory;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['excelFile'])) {
@@ -21,9 +22,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['excelFile'])) {
 
   $fiExcel = new \Engtuncay\Phputils8\excel\FiExcel();
 
-  $fdr = $fiExcel::readExcelFile($inputFileName);
+  $fiCols = new FiColList();
+  $fiCol = new \Engtuncay\Phputils8\meta\FiCol();
+  $fiCol->ofcTxFieldName="A1";
+  $fiCol->ofcTxHeader="A1";
 
-  print_r($fdr->getFkbList());
+  $fiCols->add($fiCol);
+
+  $fdr = $fiExcel::readExcelFile($inputFileName, $fiCols);
+
+  print_r($fdr);
 
 
 

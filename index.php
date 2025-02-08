@@ -1,3 +1,20 @@
+<?php
+require 'vendor/autoload.php';
+
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
+
+// Yeni bir logger oluştur
+$log = new Logger('uygulamaLogu');
+
+// Log kayıtlarını bir dosyaya yazacak bir handler ekleyelim
+$log->pushHandler(new StreamHandler(__DIR__ . '/ocg/genel.log', Logger::DEBUG));
+
+// Log mesajları ekleyelim
+$log->info('Uygulama başlatıldı');
+$log->warning('Bu bir uyarı mesajıdır');
+$log->error('Bir hata oluştu!');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
