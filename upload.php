@@ -3,6 +3,9 @@ require 'vendor/autoload.php';
 
 use Engtuncay\Phputils8\meta\FiColList;
 use PhpOffice\PhpSpreadsheet\IOFactory;
+use Engtuncay\Phputils8\log\FiLog;
+
+FiLog::initLogger('filog');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['excelFile'])) {
   $uploadedFile = $_FILES['excelFile'];
@@ -31,7 +34,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['excelFile'])) {
 
   $fdr = $fiExcel::readExcelFile($inputFileName, $fiCols);
 
-  print_r($fdr);
+  //print_r($fdr);
+  echo var_export($fdr->getFkbList(), true);
+  echo PHP_EOL;
+  print_r($fdr->getFkbList());
 
 
 

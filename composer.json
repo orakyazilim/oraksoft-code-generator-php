@@ -10,7 +10,6 @@
   "require": {
     "twbs/bootstrap": "^5.3",
     "phpoffice/phpspreadsheet": "^4.0",
-    "engtuncay/phputils8": "*",
-    "monolog/monolog": "^3.8"
+    "engtuncay/phputils8": "*"
   }
 }

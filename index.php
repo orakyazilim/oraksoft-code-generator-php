@@ -1,29 +1,20 @@
 <?php
-require 'vendor/autoload.php';
-
-use Monolog\Logger;
-use Monolog\Handler\StreamHandler;
-
-// Yeni bir logger oluştur
-$log = new Logger('uygulamaLogu');
-
-// Log kayıtlarını bir dosyaya yazacak bir handler ekleyelim
-$log->pushHandler(new StreamHandler(__DIR__ . '/ocg/genel.log', Logger::DEBUG));
-
-// Log mesajları ekleyelim
-$log->info('Uygulama başlatıldı');
-$log->warning('Bu bir uyarı mesajıdır');
-$log->error('Bir hata oluştu!');
+require 'FiAppImports.php'
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bootstrap 5 Composer</title>
+    <title>Orak Soft Code Generator</title>
     <link rel="stylesheet" href="vendor/twbs/bootstrap/dist/css/bootstrap.min.css">
+    <style>
+        .fibody {
+           background-image: url("./assets/ocg-background.jpeg");
+        }
+    </style>
 </head>
-<body>
+<body class="fibody">
 
 <!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">-->
 
@@ -32,7 +23,7 @@ $log->error('Bir hata oluştu!');
         <div class="col-md-6">
             <div class="card">
                 <div class="card-header bg-primary text-white">
-                    <h3 class="card-title text-center">Excel Dosyası Yükle</h3>
+                    <h3 class="card-title text-center">Orak Soft Code Generator</h3>
                 </div>
 
                 <div class="card-body">
@@ -74,4 +65,3 @@ $log->error('Bir hata oluştu!');
 <script src="vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
