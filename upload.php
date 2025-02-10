@@ -39,6 +39,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['excelFile'])) {
   echo PHP_EOL;
   print_r($fdr->getFkbList());
 
+  // Formdan gelen POST verilerini al
+  $formData = $_POST;
+
+  // stdClass nesnesine dönüştür
+  $formObject = (object)$formData;
+
+  // Nesne olarak verileri görüntüle
+//  echo "Ad: " . $formObject->name . "\n";
+//  echo("<br/>");
+//  echo "Email: " . $formObject->email . "\n";
+//  echo("<br/>");
+  print_r($formObject);
+
 
 
 

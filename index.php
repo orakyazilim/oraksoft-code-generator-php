@@ -8,6 +8,12 @@ require 'FiAppImports.php'
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Orak Soft Code Generator</title>
   <link rel="stylesheet" href="vendor/twbs/bootstrap/dist/css/bootstrap.min.css">
+  <script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.5.0.js"></script>
+  <!--  <script-->
+<!--    src="https://code.jquery.com/jquery-3.7.1.min.js"-->
+<!--    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="-->
+<!--    crossorigin="anonymous"></script>-->
+  <script src="fiapp.js"></script>
   <style>
       .fibody {
           background-image: url("./assets/ocg-background.jpeg");
@@ -30,26 +36,28 @@ require 'FiAppImports.php'
 
           <form action="upload.php" method="post" enctype="multipart/form-data">
 
-            <div class="container-fluid">
-              <div class="col-4 mb-3">
+            <div class="container">
+              <div class="row">
+              <div class="col-md-4 mb-3">
                 <label for="selectFi" class="form-label">Typescript:</label>
                 <select class="form-select" aria-label="Default select example" name="selectFi" id="selectFi">
-                  <option selected>Seçiniz</option>
+                  <option value="-1" selected>Seçiniz</option>
                   <option value="1">One</option>
                   <option value="2">Two</option>
                   <option value="3">Three</option>
                 </select>
                 <!--          <div class="form-text">note.</div>-->
               </div>
-              <div class="col-4 mb-3">
+              <div class="col-md-4 mb-3">
                 <label for="selectFi" class="form-label">Typescript:</label>
-                <select class="form-select" aria-label="Default select example" name="selectFi" id="selectFi">
-                  <option selected>Seçiniz</option>
+                <select class="form-select" aria-label="Default select example" name="selectFi2" id="selectFi2">
+                  <option value="-1" selected>Seçiniz</option>
                   <option value="1">One</option>
-                    <option value="2">Two</option>
+                  <option value="2">Two</option>
                   <option value="3">Three</option>
                 </select>
                 <!--          <div class="form-text">note.</div>-->
+              </div>
               </div>
             </div>
             <div class="mb-3">
@@ -67,6 +75,23 @@ require 'FiAppImports.php'
     </div>
   </div>
 </div>
+
+<!--
+<h2>Merhaba <span data-bind="text: name"></span>!</h2>
+<input type="text" data-bind="value: name" />
+<button data-bind="click: changeName">Adı 'Ali' Yap</button>
+-->
+
+<script>
+  function AppViewModel() {
+    this.name = ko.observable("Ahmet");
+    this.changeName = () => {
+      this.name("Ali");
+    };
+  }
+
+  ko.applyBindings(new AppViewModel());
+</script>
 
 <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>-->
 
